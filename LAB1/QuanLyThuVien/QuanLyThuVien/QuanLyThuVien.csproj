@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.SqlClient" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -45,6 +46,9 @@
     <Compile Include="Data\Db.cs" />
     <Compile Include="Services\DanhMucService.cs" />
     <Compile Include="Services\SachService.cs" />
+    <Compile Include="Services\DocGiaService.cs" />
+    <Compile Include="Services\ThongKeService.cs" />
+    <Compile Include="Services\MuonTraService.cs" />
     <Compile Include="Forms\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +66,24 @@
     </Compile>
     <Compile Include="Forms\FrmSach.Designer.cs">
       <DependentUpon>FrmSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDocGia.Designer.cs">
+      <DependentUpon>FrmDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmThongKe.Designer.cs">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMuonTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMuonTra.Designer.cs">
+      <DependentUpon>FrmMuonTra.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

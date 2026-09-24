@@ -10,19 +10,19 @@ namespace QuanLyThuVien.Forms
         private void btnDanhMuc_Click(object sender, EventArgs e) { using (FrmDanhMuc f = new FrmDanhMuc()) f.ShowDialog(this); }
         private void btnSach_Click(object sender, EventArgs e) { using (FrmSach f = new FrmSach()) f.ShowDialog(this); }
 
-        // Nếu bạn đã tạo thêm FrmDocGia, FrmMuonTra, FrmThongKe thì mở comment các dòng dưới
+        // Nếu bạn đã tạo thêm FrmMuonTra, FrmThongKe thì mở comment các dòng dưới
         // và thay các MessageBox tương ứng.
         private void btnDocGia_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Form Độc giả và thẻ chưa được thêm vào project này.", "Thông báo");
+            using (FrmDocGia f = new FrmDocGia()) f.ShowDialog(this);
         }
         private void btnMuonTra_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Form Mượn - Trả sách chưa được thêm vào project này.", "Thông báo");
+            using (FrmMuonTra f = new FrmMuonTra()) f.ShowDialog(this);
         }
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Form Thống kê chưa được thêm vào project này.", "Thông báo");
+            using (FrmThongKe f = new FrmThongKe()) f.ShowDialog(this);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

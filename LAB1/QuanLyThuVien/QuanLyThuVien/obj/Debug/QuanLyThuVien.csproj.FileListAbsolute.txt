@@ -1,7 +1,7 @@
-D:\Downloads\QuanLyThuVien_Solution\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
-D:\Downloads\QuanLyThuVien_Solution\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
-D:\Downloads\QuanLyThuVien_Solution\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
-D:\Downloads\QuanLyThuVien_Solution\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.AssemblyReference.cache
-D:\Downloads\QuanLyThuVien_Solution\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
-D:\Downloads\QuanLyThuVien_Solution\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
-D:\Downloads\QuanLyThuVien_Solution\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
+D:\Downloads\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+D:\Downloads\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+D:\Downloads\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+D:\Downloads\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.AssemblyReference.cache
+D:\Downloads\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
+D:\Downloads\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+D:\Downloads\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
