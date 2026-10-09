@@ -20,19 +20,17 @@
 
 ## 👋 Giới thiệu
 
-```js
-const dat = {
-  name: "Nguyễn Tấn Đạt",
-  role: "Sinh viên Công nghệ phần mềm",
-  school: "Trường ĐH Tài nguyên và Môi trường TP.HCM (HCMUNRE)",
-  faculty: "Khoa Công nghệ thông tin",
-  cohort: "2023 - 2027",
-  location: "TP. Hồ Chí Minh, Việt Nam 🇻🇳",
-  currentlyLearning: ["Node.js", "Express", "React", "SDN / Ryu Controller"],
-  currentlyBuilding: "V-Charge OS — phần mềm quản lý trạm sạc & bãi đỗ xe thông minh",
-  motto: "Làm cho chạy được → làm cho đúng → làm cho đẹp.",
-};
-```
+| | |
+|---|---|
+| 👤 **Họ tên** | Nguyễn Tấn Đạt |
+| 🎓 **Vai trò** | Sinh viên Công nghệ phần mềm |
+| 🏫 **Trường** | ĐH Tài nguyên và Môi trường TP.HCM (HCMUNRE) |
+| 📚 **Khoa** | Công nghệ thông tin, khóa 2023 - 2027 |
+| 📍 **Địa điểm** | TP. Hồ Chí Minh, Việt Nam 🇻🇳 |
+| 🌱 **Đang học** | Node.js · Express · React · SDN / Ryu Controller |
+| 🔨 **Đang làm** | V-Charge OS: phần mềm quản lý trạm sạc & bãi đỗ xe thông minh |
+
+> *Làm cho chạy được → làm cho đúng → làm cho đẹp.*
 
 - 🎓 Sinh viên năm cuối chuyên ngành **Công nghệ phần mềm** tại **HCMUNRE**
 - 🔭 Đang làm đồ án chuyên ngành: **V-Charge OS** — tích hợp bản đồ GIS và thuật toán tìm đường
@@ -71,7 +69,7 @@ const dat = {
 |---|---|---|---|
 | ⚡ **V-Charge OS** | Phần mềm quản lý trạm sạc & bãi đỗ xe thông minh tích hợp GIS và thuật toán tìm đường. Phân quyền 3 vai trò: Admin / Nhân viên / Khách hàng | Node.js, Express, MySQL, JWT, React, Leaflet, Dijkstra/A* | 🔧 Đang phát triển |
 | 🛒 **e-SHOPPING** | Hệ thống cửa hàng online — phân tích thiết kế OOAD đầy đủ bộ UML, CSDL và prototype | C# WinForms, SQL Server, UML | 📝 Bài thực hành |
-| ✈️ **Quản lý công ty du lịch** | Quản lý tour, chuyến khách lẻ, đoàn, phân công hướng dẫn viên, lương, khảo sát. Kiến trúc UI → Service → Data | C# WinForms, SQL Server, UML | 📝 Bài thực hành |
+| ✈️ **[Quản lý công ty du lịch](./LAB%205/QuanLyCongTyDuLich)** | Quản lý tour, chuyến khách lẻ, đoàn, phân công hướng dẫn viên, lương, khảo sát. Kiến trúc UI → Service → Data | C# WinForms, SQL Server, UML | 📝 Bài thực hành |
 | 💉 **Cổng theo dõi tiêm chủng cộng đồng** | Báo cáo đồ án cuối kỳ môn Phương pháp phát triển phần mềm hướng đối tượng | UML, ERD, OOAD | ✅ Hoàn thành |
 | 🌐 **SDN với Ryu Controller** | 5 lab: Table-miss, L2 Learning Switch, Firewall, Telemetry, Link Failover | Ryu, Mininet, Python, Ubuntu | 🧪 Thực hành |
 
