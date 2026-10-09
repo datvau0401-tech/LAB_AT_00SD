@@ -8,7 +8,7 @@
 
 <br/>
 
-![Profile Views](https://komarev.com/ghpvc/?username=USERNAME&label=Profile%20views&color=0e75b6&style=flat-square)
+![Profile Views](https://komarev.com/ghpvc/?username=datvau0401-tech&label=Profile%20views&color=0e75b6&style=flat-square)
 ![Node.js](https://img.shields.io/badge/Node.js-learning-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-Vite-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
@@ -94,10 +94,10 @@ const dat = {
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=USERNAME&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="stats" />
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&layout=compact&theme=tokyonight&hide_border=true" alt="top languages" />
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=datvau0401-tech&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="stats" />
+<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=datvau0401-tech&layout=compact&theme=tokyonight&hide_border=true" alt="top languages" />
 
-<img src="https://streak-stats.demolab.com?user=USERNAME&theme=tokyonight&hide_border=true" alt="streak" />
+<img src="https://streak-stats.demolab.com?user=datvau0401-tech&theme=tokyonight&hide_border=true" alt="streak" />
 
 </div>
 
