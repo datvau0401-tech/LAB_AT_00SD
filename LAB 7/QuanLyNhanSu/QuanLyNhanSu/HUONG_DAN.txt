@@ -1,0 +1,15 @@
+HUONG DAN CHAY - QUAN LY NHAN SU (WinForms, .NET Framework 4.7.2)
+
+1. Tao CSDL (chi lam 1 lan, chay lai se tao moi + du lieu mau):
+   - Mo Visual Studio > View > SQL Server Object Explorer > (localdb)\MSSQLLocalDB
+     > chuot phai > New Query > dan noi dung Database\QuanLyNhanSuDB.sql > Execute
+   - Hoac: sqlcmd -S "(LocalDB)\MSSQLLocalDB" -i Database\QuanLyNhanSuDB.sql
+2. Mo QuanLyNhanSu.sln bang Visual Studio 2022 > nhan F5.
+   (Neu may dung SQL Server khac, sua chuoi ket noi trong QuanLyNhanSu\App.config)
+
+Du lieu mau de thu:
+ - Tab "Tuyen dung": NV005 -> lap QD thu viec (nhap so QD bat ky).
+ - Tab "Ky quyet dinh": chon QD cho ky -> Giam doc ky (QD khen thuong tu lap phieu chi).
+ - Tab "Hop dong": NV003 da co QD tuyen dung da ky -> ky hop dong (dai han thi nhap muc dong BH).
+ - Tab "Khen thuong": lap QD cho ca nhan / phong ban, sau do sang tab Ky.
+ - Tab "Tinh luong": thang 9/2026 co cham cong cho NV001, NV002.
