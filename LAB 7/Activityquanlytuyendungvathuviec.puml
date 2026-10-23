@@ -1,0 +1,37 @@
+@startuml
+skinparam linetype ortho
+
+start
+
+:Tiếp nhận nhu cầu tuyển dụng;
+:Lập kế hoạch tuyển dụng;
+:Đăng tin tuyển dụng;
+:Tiếp nhận hồ sơ ứng viên;
+
+:Kiểm tra hồ sơ;
+
+if (Hồ sơ hợp lệ?) then (Có)
+    :Sắp xếp phỏng vấn;
+    :Đánh giá ứng viên;
+
+    if (Đạt yêu cầu?) then (Có)
+        :Tiếp nhận thử việc;
+        :Theo dõi quá trình thử việc;
+        :Đánh giá kết quả thử việc;
+
+        if (Thử việc đạt?) then (Có)
+            :Lập hợp đồng lao động;
+        else (Không)
+            :Thông báo không đạt;
+        endif
+
+    else (Không)
+        :Thông báo từ chối ứng viên;
+    endif
+
+else (Không)
+    :Yêu cầu bổ sung hồ sơ;
+endif
+
+stop
+@enduml

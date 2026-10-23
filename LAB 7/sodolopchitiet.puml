@@ -1,0 +1,187 @@
+@startuml
+left to right direction
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 40
+skinparam ranksep 50
+hide circle
+
+class NhanVien {
+  - maNV: String
+  - hoTen: String
+  - ngaySinh: Date
+  - gioiTinh: String
+  - diaChi: String
+  - soDienThoai: String
+  - email: String
+  - ngayVaoLam: Date
+  - trangThai: String
+  + themNhanVien(): void
+  + capNhatThongTin(): void
+  + xemLichLamViec(): void
+  + xemPhieuLuong(): void
+}
+
+class HoSoBaoHiem {
+  - maHoSo: int
+  - loaiBaoHiem: String
+  - maSoBaoHiem: String
+  - ngayBatDau: Date
+  - ngayKetThuc: Date
+  - trangThai: String
+  + themHoSo(): void
+  + capNhatHoSo(): void
+  + traCuuHoSo(): void
+}
+
+class TuyenDung {
+  - maTuyenDung: int
+  - viTri: String
+  - soLuong: int
+  - ngayDang: Date
+  - hanNop: Date
+  - moTa: String
+  - trangThai: String
+  + taoTinTuyenDung(): void
+  + capNhatTinTuyenDung(): void
+  + dongTinTuyenDung(): void
+}
+
+class HoSoUngVien {
+  - maUngVien: int
+  - hoTen: String
+  - ngaySinh: Date
+  - soDienThoai: String
+  - email: String
+  - diaChi: String
+  - trinhDo: String
+  - ketQuaPhongVan: String
+  - trangThai: String
+  + tiepNhanHoSo(): void
+  + capNhatHoSo(): void
+  + danhGiaUngVien(): void
+  + ghiNhanKetQua(): void
+}
+
+class HopDongLaoDong {
+  - maHopDong: int
+  - loaiHopDong: String
+  - ngayKy: Date
+  - ngayBatDau: Date
+  - ngayHetHan: Date
+  - mucLuong: double
+  - trangThai: String
+  + lapHopDong(): void
+  + capNhatHopDong(): void
+  + giaHanHopDong(): void
+  + ketThucHopDong(): void
+}
+
+class QuyetDinhLuong {
+  - maQuyetDinhLuong: int
+  - mucLuongCu: double
+  - mucLuongMoi: double
+  - ngayQuyetDinh: Date
+  - ngayApDung: Date
+  - lyDo: String
+  + lapQuyetDinh(): void
+  + capNhatQuyetDinh(): void
+  + pheDuyetQuyetDinh(): void
+}
+
+class QuyetDinhChucVu {
+  - maQuyetDinhChucVu: int
+  - chucVuCu: String
+  - chucVuMoi: String
+  - ngayQuyetDinh: Date
+  - ngayApDung: Date
+  - lyDo: String
+  + lapQuyetDinh(): void
+  + capNhatQuyetDinh(): void
+  + pheDuyetQuyetDinh(): void
+}
+
+class KhenThuongKyLuat {
+  - maQuyetDinh: int
+  - loaiQuyetDinh: String
+  - noiDung: String
+  - soTien: double
+  - ngayQuyetDinh: Date
+  - lyDo: String
+  + lapQuyetDinh(): void
+  + capNhatQuyetDinh(): void
+  + pheDuyetQuyetDinh(): void
+}
+
+class LichLamViec {
+  - maLich: int
+  - ngayLam: Date
+  - caLam: String
+  - gioBatDau: Time
+  - gioKetThuc: Time
+  - loaiCa: String
+  + lapLich(): void
+  + capNhatLich(): void
+  + phanCaNhanVien(): void
+}
+
+class ChamCong {
+  - maChamCong: int
+  - ngayChamCong: Date
+  - gioVao: Time
+  - gioRa: Time
+  - soGioLam: double
+  - soGioTangCa: double
+  - trangThai: String
+  + ghiNhanChamCong(): void
+  + capNhatChamCong(): void
+  + tinhGioLam(): double
+  + tinhGioTangCa(): double
+}
+
+class BangLuong {
+  - maBangLuong: int
+  - thang: int
+  - nam: int
+  - luongCoBan: double
+  - tienPhuCap: double
+  - tienTangCa: double
+  - tienKhauTru: double
+  - tongLuong: double
+  - ngayLap: Date
+  - trangThai: String
+  + tinhLuong(): double
+  + lapBangLuong(): void
+  + xacNhanBangLuong(): void
+}
+
+class PhieuThuChi {
+  - maPhieu: int
+  - loaiPhieu: String
+  - noiDung: String
+  - soTien: double
+  - ngayLap: Date
+  - nguoiLap: String
+  + lapPhieu(): void
+  + capNhatPhieu(): void
+  + inPhieu(): void
+}
+
+NhanVien "1" -- "0..*" HoSoBaoHiem
+TuyenDung "1" -- "0..*" HoSoUngVien
+HoSoUngVien "0..1" -- "0..1" HopDongLaoDong : trung tuyen
+
+NhanVien "1" -- "0..*" HopDongLaoDong
+NhanVien "1" -- "0..*" QuyetDinhLuong
+NhanVien "1" -- "0..*" QuyetDinhChucVu
+NhanVien "1" -- "0..*" KhenThuongKyLuat
+
+NhanVien "1" -- "0..*" LichLamViec
+NhanVien "1" -- "0..*" ChamCong
+NhanVien "1" -- "0..*" BangLuong
+
+LichLamViec "1" -- "0..*" ChamCong
+BangLuong "1" -- "0..*" PhieuThuChi
+
+@enduml

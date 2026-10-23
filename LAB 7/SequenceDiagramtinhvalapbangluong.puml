@@ -1,0 +1,45 @@
+@startuml
+skinparam linetype ortho
+autonumber
+
+actor "Nhân viên kế toán" as KT
+participant "Hệ thống nhân sự" as HT
+participant "Dữ liệu chấm công" as CC
+participant "Quản lý lương" as QL
+actor "Giám đốc" as GD
+participant "Phiếu lương" as PL
+
+KT -> HT: Yêu cầu tính lương tháng
+HT -> CC: Lấy dữ liệu chấm công
+CC --> HT: Trả dữ liệu chấm công
+
+HT -> QL: Tính lương nhân viên
+QL -> QL: Tính lương, phụ cấp, khấu trừ
+QL --> HT: Trả kết quả tính lương
+
+HT --> KT: Hiển thị bảng lương
+
+KT -> HT: Kiểm tra bảng lương
+
+alt Bảng lương chính xác
+    KT -> HT: Trình xác nhận bảng lương
+    HT -> GD: Gửi bảng lương chờ xác nhận
+
+    alt Giám đốc đồng ý
+        GD -> HT: Xác nhận bảng lương
+        HT -> PL: Tạo phiếu lương
+        PL --> HT: Xác nhận tạo phiếu
+        HT --> KT: Thông báo hoàn tất
+    else Giám đốc không đồng ý
+        GD -> HT: Yêu cầu điều chỉnh
+        HT --> KT: Thông báo cần điều chỉnh
+    end
+
+else Bảng lương chưa chính xác
+    KT -> HT: Yêu cầu tính lại lương
+    HT -> QL: Điều chỉnh và tính lại
+    QL --> HT: Trả bảng lương mới
+    HT --> KT: Hiển thị bảng lương mới
+end
+
+@enduml

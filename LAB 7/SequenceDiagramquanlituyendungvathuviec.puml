@@ -1,0 +1,40 @@
+@startuml
+skinparam linetype ortho
+autonumber
+
+actor "NV Tuyển dụng" as NV
+participant "Hệ thống" as HT
+participant "Hồ sơ ứng viên" as HS
+participant "Quản lý tuyển dụng" as QL
+participant "Hợp đồng lao động" as HD
+
+NV -> HT: Tạo tin tuyển dụng
+HT -> QL: Lưu thông tin tuyển dụng
+QL --> HT: Xác nhận lưu thành công
+
+NV -> HT: Tiếp nhận hồ sơ ứng viên
+HT -> HS: Kiểm tra thông tin hồ sơ
+HS --> HT: Trả kết quả kiểm tra
+
+alt Hồ sơ hợp lệ
+    HT -> HS: Lưu hồ sơ ứng viên
+    HT --> NV: Thông báo hồ sơ hợp lệ
+
+    NV -> HT: Cập nhật kết quả phỏng vấn
+    HT -> HS: Lưu kết quả phỏng vấn
+    HS --> HT: Xác nhận cập nhật
+
+    alt Ứng viên đạt yêu cầu
+        NV -> HT: Ghi nhận kết quả thử việc
+        HT -> HD: Lập hợp đồng lao động
+        HD --> HT: Trả thông tin hợp đồng
+        HT --> NV: Thông báo hoàn tất tuyển dụng
+    else Ứng viên không đạt
+        HT --> NV: Thông báo ứng viên không đạt
+    end
+
+else Hồ sơ không hợp lệ
+    HT --> NV: Yêu cầu bổ sung hồ sơ
+end
+
+@enduml

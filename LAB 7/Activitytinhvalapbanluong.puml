@@ -1,0 +1,30 @@
+@startuml
+skinparam linetype ortho
+
+start
+
+:Tổng hợp dữ liệu chấm công;
+:Tổng hợp thông tin lương và phụ cấp;
+:Tổng hợp tiền thưởng và khấu trừ;
+:Tính lương nhân viên;
+:Lập bảng lương;
+
+if (Bảng lương chính xác?) then (Có)
+    :Trình Giám đốc xác nhận;
+
+    if (Được xác nhận?) then (Có)
+        :Hoàn tất bảng lương;
+        :Lưu bảng lương;
+        :Lập phiếu lương;
+    else (Không)
+        :Điều chỉnh bảng lương;
+        :Tính lại lương;
+    endif
+
+else (Không)
+    :Kiểm tra và điều chỉnh dữ liệu;
+    :Tính lại lương;
+endif
+
+stop
+@enduml
