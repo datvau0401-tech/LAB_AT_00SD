@@ -1,0 +1,45 @@
+
+@startuml
+actor "Công ty thuê" as CT
+boundary "Giao diện hệ thống" as UI
+control "Xử lý hợp đồng" as XL
+actor "Nhân viên quản lý cao ốc" as NV
+database "Cơ sở dữ liệu" as DB
+
+CT -> UI: Gửi yêu cầu gia hạn
+CT -> UI: Nhập mã hợp đồng và thời gian gia hạn
+UI -> XL: Gửi thông tin yêu cầu
+
+XL -> DB: Tìm kiếm hợp đồng
+DB --> XL: Trả về thông tin hợp đồng
+
+alt Không tìm thấy hợp đồng
+    XL --> UI: Thông báo không tìm thấy hợp đồng
+    UI --> CT: Hiển thị thông báo
+
+else Hợp đồng đã hết hiệu lực
+    XL -> XL: Kiểm tra ngày hết hạn
+    XL --> UI: Thông báo hợp đồng hết hiệu lực
+    UI --> CT: Hiển thị thông báo
+
+else Hợp đồng còn hiệu lực
+    XL -> XL: Kiểm tra thời gian gia hạn
+
+    alt Thời gian gia hạn không hợp lệ
+        XL --> UI: Thông báo thời gian gia hạn không hợp lệ
+        UI --> CT: Hiển thị thông báo
+
+    else Thời gian gia hạn hợp lệ
+        XL --> NV: Gửi yêu cầu xác nhận gia hạn
+        NV -> UI: Xác nhận gia hạn
+        UI -> XL: Gửi kết quả xác nhận
+
+        XL -> DB: Lưu phiếu gia hạn
+        XL -> DB: Cập nhật ngày kết thúc hợp đồng
+        DB --> XL: Xác nhận lưu thành công
+
+        XL --> UI: Thông báo gia hạn thành công
+        UI --> CT: Hiển thị kết quả gia hạn
+    end
+end
+@enduml
