@@ -1,0 +1,42 @@
+
+@startuml
+|Công ty thuê|
+start
+:Gửi yêu cầu gia hạn hợp đồng;
+:Nhập thời gian muốn gia hạn;
+
+|Nhân viên quản lý cao ốc|
+:Tiếp nhận yêu cầu gia hạn;
+:Tra cứu thông tin hợp đồng;
+
+if (Hợp đồng tồn tại?) then (Có)
+    :Kiểm tra thời hạn hợp đồng;
+
+    if (Hợp đồng còn hiệu lực?) then (Có)
+        :Kiểm tra thời gian gia hạn;
+
+        if (Thời gian gia hạn <= 1/2\nthời hạn thuê ban đầu?) then (Có)
+            :Lập phiếu gia hạn;
+            :Xác nhận phiếu gia hạn;
+
+            |Hệ thống|
+            :Lưu phiếu gia hạn;
+            :Cập nhật ngày kết thúc hợp đồng mới;
+            :Thông báo gia hạn thành công;
+
+            |Công ty thuê|
+            :Nhận thông báo gia hạn thành công;
+        else (Không)
+            :Thông báo thời gian gia hạn không hợp lệ;
+        endif
+
+    else (Không)
+        :Thông báo hợp đồng đã hết hiệu lực;
+    endif
+
+else (Không)
+    :Thông báo không tìm thấy hợp đồng;
+endif
+
+stop
+@enduml
