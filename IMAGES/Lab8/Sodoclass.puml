@@ -1,0 +1,196 @@
+
+@startuml
+title CLASS DIAGRAM - QUAN LY CHO THUE VAN PHONG CAO OC
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+
+class Tang {
+    - maTang: int <<PK>>
+    - tenTang: String
+    - moTa: String
+}
+
+class Phong {
+    - maPhong: int <<PK>>
+    - maTang: int <<FK>>
+    - maSoPhong: String
+    - huong: String
+    - dienTich: double
+    - donGiaThue: decimal
+    - tinhTrang: String
+}
+
+Tang "1" -- "0..*" Phong : bao gom
+
+
+
+class KhachHang {
+    - maKhachHang: int <<PK>>
+    - hoTen: String
+    - soDienThoai: String
+    - email: String
+    - diaChi: String
+}
+
+class CongTyThue {
+    - maCongTy: int <<PK>>
+    - tenCongTy: String
+    - maSoThue: String
+    - diaChi: String
+    - soDienThoai: String
+    - email: String
+}
+
+KhachHang "1" -- "0..*" HopDong : dai dien ky
+
+
+class HopDong {
+    - maHopDong: int <<PK>>
+    - maKhachHang: int <<FK>>
+    - maCongTy: int <<FK>>
+    - ngayLap: Date
+    - ngayBatDau: Date
+    - ngayKetThuc: Date
+    - tongTienThue: decimal
+    - trangThai: String
+}
+
+class ChiTietHopDong {
+    - maChiTiet: int <<PK>>
+    - maHopDong: int <<FK>>
+    - maPhong: int <<FK>>
+    - donGiaThue: decimal
+    - thoiHanThue: int
+}
+
+class PhieuGiaHan {
+    - maPhieuGiaHan: int <<PK>>
+    - maHopDong: int <<FK>>
+    - ngayGiaHan: Date
+    - thoiGianGiaHan: int
+    - ngayKetThucMoi: Date
+}
+
+CongTyThue "1" -- "0..*" HopDong : thue
+HopDong "1" *-- "1..*" ChiTietHopDong : co
+Phong "1" -- "0..*" ChiTietHopDong : duoc thue
+HopDong "1" *-- "0..*" PhieuGiaHan : co
+
+
+class ThanhToanTienThue {
+    - maThanhToan: int <<PK>>
+    - maHopDong: int <<FK>>
+    - ngayThanhToan: Date
+    - soTien: decimal
+    - kyThanhToan: String
+    - phuongThuc: String
+    - trangThai: String
+}
+
+HopDong "1" -- "0..*" ThanhToanTienThue : thanh toan
+
+
+class LoaiDichVu {
+    - maDichVu: int <<PK>>
+    - tenDichVu: String
+    - donGia: decimal
+    - donViTinh: String
+}
+
+class HoaDonDichVu {
+    - maHoaDon: int <<PK>>
+    - maHopDong: int <<FK>>
+    - ngayLap: Date
+    - thangThanhToan: String
+    - tongTien: decimal
+    - trangThai: String
+}
+
+class ChiTietHoaDonDichVu {
+    - maChiTiet: int <<PK>>
+    - maHoaDon: int <<FK>>
+    - maDichVu: int <<FK>>
+    - maPhong: int <<FK>>
+    - chiSoCu: double
+    - chiSoMoi: double
+    - soLuongSuDung: double
+    - thanhTien: decimal
+}
+
+class ThanhToanDichVu {
+    - maThanhToan: int <<PK>>
+    - maHoaDon: int <<FK>>
+    - ngayThanhToan: Date
+    - soTien: decimal
+    - phuongThuc: String
+    - trangThai: String
+}
+
+HopDong "1" -- "0..*" HoaDonDichVu : phat sinh
+HoaDonDichVu "1" *-- "1..*" ChiTietHoaDonDichVu : gom
+LoaiDichVu "1" -- "0..*" ChiTietHoaDonDichVu : ap dung
+Phong "1" -- "0..*" ChiTietHoaDonDichVu : su dung
+HoaDonDichVu "1" -- "0..*" ThanhToanDichVu : duoc thanh toan
+
+
+class NhanVienCongTy {
+    - maNhanVien: int <<PK>>
+    - maCongTy: int <<FK>>
+    - maPhong: int <<FK>>
+    - hoTen: String
+    - hinhAnh: String
+    - chucVu: String
+    - ngayVaoLam: Date
+}
+
+CongTyThue "1" -- "0..*" NhanVienCongTy : co
+Phong "1" -- "0..*" NhanVienCongTy : lam viec
+
+' =========================
+' 7. QUAN LY THE GIU XE
+' =========================
+
+class TheGiuXe {
+    - maThe: int <<PK>>
+    - maNhanVien: int <<FK>>
+    - maPhuongTien: int <<FK>>
+    - ngayCap: Date
+    - trangThai: String
+}
+
+class PhuongTien {
+    - maPhuongTien: int <<PK>>
+    - bienSoXe: String
+    - loaiXe: String
+    - mauXe: String
+}
+
+NhanVienCongTy "1" -- "0..*" TheGiuXe : duoc cap
+PhuongTien "1" -- "0..*" TheGiuXe : dang ky
+
+
+class KiemTraPhong {
+    - maKiemTra: int <<PK>>
+    - maPhong: int <<FK>>
+    - ngayKiemTra: Date
+    - noiDung: String
+    - ketQua: String
+}
+
+class BienBanViPham {
+    - maBienBan: int <<PK>>
+    - maPhong: int <<FK>>
+    - maKiemTra: int <<FK>>
+    - ngayLap: Date
+    - noiDungViPham: String
+    - mucPhat: decimal
+    - trangThai: String
+}
+
+Phong "1" -- "0..*" KiemTraPhong : duoc kiem tra
+KiemTraPhong "1" -- "0..*" BienBanViPham : ghi nhan
+Phong "1" -- "0..*" BienBanViPham : co vi pham
+
+@enduml
